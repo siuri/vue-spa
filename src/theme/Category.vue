@@ -47,6 +47,7 @@ import Post from './Post.vue'
     },
     created () {
       this.loadPosts()
+      console.log(this.$route.query.page)
     }
   }
 </script>
