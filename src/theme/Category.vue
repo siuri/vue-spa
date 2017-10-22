@@ -1,25 +1,19 @@
 <template>
-    <div>
-      <app-header></app-header>
-      <section class="main-section section">
-        <div class="container content">
-          <category></category>
-        </div>
-      </section>
-      <app-footer></app-footer>
+  <div class="columns">
+    <div class="column is-one-third" v-for='(post, title) in posts' v-bind:key='post.id'>
+      <div class="card">
+        <div class="card-content">
+          <h3>{{ post.title }}</h3> {{post.content}}
+      </div>
+      <footer class="card-footer">
+        <a :href="post.link" target="_blank" class="card-footer-item">Read More</a>
+      </footer>
+      </div>
     </div>
+  </div>
 </template>
-
 <script>
-  import AppHeader from './AppHeader.vue'
-  import AppFooter from './AppFooter.vue'
-  import Category from './Category.vue'
   export default {
-    components: {
-      'app-header' : AppHeader,
-      'category' : Category,
-      'app-footer' : AppFooter
-    },
     data () {
       return{
         posts: [
@@ -34,15 +28,3 @@
     }
   }
 </script>
-<style lang="scss">
-  $primary:#287ab1;
-  @import '~bulma';
-
-  .columns {
-    flex-wrap: wrap
-  }
-  .nav.has-shadow {
-    box-shadow: 0 2px 3px hsla(0,0%,4%,.1);
-  }
-</style>
-
