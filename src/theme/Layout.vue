@@ -27,8 +27,6 @@
   .columns {
     flex-wrap: wrap
   }
-  .nav.has-shadow {
-    box-shadow: 0 2px 3px hsla(0,0%,4%,.1);
-  }
+
 </style>
 
